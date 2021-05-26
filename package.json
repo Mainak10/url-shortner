@@ -4,7 +4,8 @@
   "description": "An prototype for url shortner using nodeJs",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}"
   },
   "keywords": [
     "url-shortner",
@@ -18,5 +19,9 @@
     "pg": "^8.6.0",
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.6.2"
+  },
+  "devDependencies": {
+    "onchange": "^7.1.0",
+    "prettier": "2.3.0"
   }
 }

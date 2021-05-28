@@ -19,10 +19,11 @@ const URLs = db.define("urls", {
     allowNull: false,
   },
   link: {
-    type: DataTypes.TEXT(2048),
+    type: DataTypes.TEXT(),
     allowNull: false,
   },
 });
 module.exports = {
   db,
+  URLs,
 };

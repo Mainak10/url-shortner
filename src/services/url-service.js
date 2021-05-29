@@ -1,4 +1,3 @@
-const { where } = require("sequelize/types");
 const { URLs, db } = require("../models/db");
 const { int2radix64, radix64toint } = require("../services/radix64-service");
 
@@ -6,7 +5,7 @@ const { int2radix64, radix64toint } = require("../services/radix64-service");
 
 async function createRandomShortCode(link) {
   /** Maximum digits of the random code can be 13, The will be 0 ---> 9999999999999 */
-  const ranGenCode = Math.random() * 10000000000000;
+  const ranGenCode = parseInt(Math.random() * 10000000000000);
 
   /** To avoid collision of existing same random code
    * check generated id exist or not
@@ -31,7 +30,7 @@ async function createRandomShortCode(link) {
 
 async function createCustomShortCode(code, link) {
   /** Get the ID first for the requested code */
-
+  //TODO validate code
   const idForReqCode = radix64toint(code);
 
   /** check if ID already exist or not  */

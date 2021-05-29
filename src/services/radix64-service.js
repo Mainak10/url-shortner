@@ -30,5 +30,4 @@ function radix64toint(str) {
   return num;
 }
 
-//console.log(radix64toint("_______"));
-module.export = { radix64toint, int2radix64 };
+module.exports = { radix64toint, int2radix64 };

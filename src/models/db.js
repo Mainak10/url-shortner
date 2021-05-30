@@ -11,10 +11,12 @@ const URLs = db.define("urls", {
   id: {
     primaryKey: true,
     type: DataTypes.BIGINT,
+    allowNull: false,
   },
   code: {
     type: DataTypes.STRING(7),
     unique: true,
+    allowNull: false,
   },
   link: {
     type: DataTypes.TEXT(),

@@ -1,11 +1,16 @@
-const { URLs, db } = require("../models/db");
+const { URLs } = require("../models/db");
 const { int2radix64, radix64toint } = require("../services/radix64-service");
 
 /** Insert randomly generated link with hash ID  */
 
 async function createRandomShortCode(link) {
-  /** Maximum digits of the random code can be 13, The will be 0 ---> 9999999999999 */
-  const ranGenCode = parseInt(Math.random() * 10000000000000);
+  /** How can we make sure it always generate 7 chars code only?
+   * log of 1000000000000 of base 64 always generate 7. Hence it will generate always 7 chars
+   * same logic as finding number of binary bits from a decimal number
+   */
+
+  /** Maximum digits of the random code can be 12, The will be 0 ---> 999999999999 */
+  const ranGenCode = parseInt(Math.random() * 1000000000000);
 
   /** To avoid collision of existing same random code
    * check generated id exist or not

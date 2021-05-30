@@ -19,7 +19,7 @@ function int2radix64(num) {
   return chars.join("");
 }
 
-/** convert str to  */
+/** convert str to  int */
 
 function radix64toint(str) {
   let charsArr = str.split("");

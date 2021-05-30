@@ -9,7 +9,7 @@ app.use(express.json());
 app.use("/api/links", linkRoute);
 app.use("/", redirectRoute);
 
-db.sync({ force: true })
+db.sync({ alter: true })
   .then(() => console.log("Table has been created!"))
   .catch((err) => console.error(err));
 
